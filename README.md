@@ -1,2 +1,2 @@
 # vein
-game engine written in rust
+game engine written in cpp
