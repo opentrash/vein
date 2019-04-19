@@ -1,5 +1,3 @@
-#include <iostream>
-
 class Vector2 {
 private:
 	float x;
