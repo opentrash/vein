@@ -1,7 +1,7 @@
 #include "Vector2.h"
 
 /**
- * constructor with no input
+ * constructor
  * (0.0, 0.0)
  */
 Vector2::Vector2() {
