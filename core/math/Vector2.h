@@ -16,6 +16,7 @@ struct Vector2 {
 	Vector2(const Vector2 &c);
 	float length();
 	Vector2 normalize();
+	void normalize_self();
 };
 
 #endif // define VECTOR2_H

@@ -41,7 +41,23 @@ float Vector2::length() {
 Vector2 Vector2::normalize() {
 	Vector2 target;
 	float len = length();
-	target.x = x / len;
-	target.y = y / len;
+	if (len == 0.0) {
+		target.x = 0.0;
+		target.y = 0.0;
+	} else {
+		target.x = x / len;
+		target.y = y / len;
+	}
 	return target;
+}
+
+/**
+ * normalize self
+ */
+void Vector2::normalize_self() {
+	float len = length();
+	if (len != 0.0) {
+		x /= len;
+		y /= len;
+	}
 }

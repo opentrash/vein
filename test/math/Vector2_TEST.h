@@ -50,6 +50,22 @@ TEST(VECTOR2, NORMALIZE)
 	Vector2 target = a.normalize();
 	EXPECT_FLOAT_EQ(target.x, 0.6);
 	EXPECT_FLOAT_EQ(target.y, 0.8);
+	Vector2 b;
+	Vector2 target_b = b.normalize();
+	EXPECT_FLOAT_EQ(target_b.x, 0.0);
+	EXPECT_FLOAT_EQ(target_b.y, 0.0);
+}
+
+TEST(VECTOR2, NORMALIZE_SELF)
+{
+	Vector2 a(3.0, 4.0);
+	a.normalize_self();
+	EXPECT_FLOAT_EQ(a.x, 0.6);
+	EXPECT_FLOAT_EQ(a.y, 0.8);
+	Vector2 b;
+	b.normalize_self();
+	EXPECT_FLOAT_EQ(b.x, 0.0);
+	EXPECT_FLOAT_EQ(b.y, 0.0);
 }
 
 
