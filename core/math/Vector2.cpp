@@ -26,38 +26,3 @@ Vector2::Vector2(const Vector2 &c) {
 	y = c.y;
 }
 
-/**
- * vector length
- */
-float Vector2::length() {
-	float x2 = x * x;
-	float y2 = y * y;
-	return sqrtf(x2 + y2);
-}
-
-/**
- * normalize the vector
- */
-Vector2 Vector2::normalize() {
-	Vector2 target;
-	float len = length();
-	if (len == 0.0) {
-		target.x = 0.0;
-		target.y = 0.0;
-	} else {
-		target.x = x / len;
-		target.y = y / len;
-	}
-	return target;
-}
-
-/**
- * normalize self
- */
-void Vector2::normalize_self() {
-	float len = length();
-	if (len != 0.0) {
-		x /= len;
-		y /= len;
-	}
-}

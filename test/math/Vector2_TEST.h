@@ -44,26 +44,26 @@ TEST(VECTOR2, LENGTH)
 	EXPECT_FLOAT_EQ(lengthB, 0.0);
 }
 
-TEST(VECTOR2, NORMALIZE)
+TEST(VECTOR2, NORMALIZED)
 {
 	Vector2 a(3.0, 4.0);
-	Vector2 target = a.normalize();
+	Vector2 target = a.normalized();
 	EXPECT_FLOAT_EQ(target.x, 0.6);
 	EXPECT_FLOAT_EQ(target.y, 0.8);
 	Vector2 b;
-	Vector2 target_b = b.normalize();
+	Vector2 target_b = b.normalized();
 	EXPECT_FLOAT_EQ(target_b.x, 0.0);
 	EXPECT_FLOAT_EQ(target_b.y, 0.0);
 }
 
-TEST(VECTOR2, NORMALIZE_SELF)
+TEST(VECTOR2, NORMALIZE)
 {
 	Vector2 a(3.0, 4.0);
-	a.normalize_self();
+	a.normalize();
 	EXPECT_FLOAT_EQ(a.x, 0.6);
 	EXPECT_FLOAT_EQ(a.y, 0.8);
 	Vector2 b;
-	b.normalize_self();
+	b.normalize();
 	EXPECT_FLOAT_EQ(b.x, 0.0);
 	EXPECT_FLOAT_EQ(b.y, 0.0);
 }

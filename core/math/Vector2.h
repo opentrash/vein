@@ -14,9 +14,45 @@ struct Vector2 {
 	Vector2(void);
 	Vector2(float _x, float _y);
 	Vector2(const Vector2 &c);
-	float length();
-	Vector2 normalize();
-	void normalize_self();
+	inline float length() const;
+	inline Vector2 normalized() const;
+	inline void normalize();
 };
+
+/**
+ * vector length
+ */
+float Vector2::length() const {
+	float x2 = x * x;
+	float y2 = y * y;
+	return sqrtf(x2 + y2);
+}
+
+/**
+ * normalize the vector
+ */
+Vector2 Vector2::normalized() const {
+	Vector2 target;
+	float len = length();
+	if (len == 0.0) {
+		target.x = 0.0;
+		target.y = 0.0;
+	} else {
+		target.x = x / len;
+		target.y = y / len;
+	}
+	return target;
+}
+
+/**
+ * normalize self
+ */
+void Vector2::normalize() {
+	float len = length();
+	if (len != 0.0) {
+		x /= len;
+		y /= len;
+	}
+}
 
 #endif // define VECTOR2_H
