@@ -9,7 +9,7 @@
 #define VECTOR2_TEST_H
 
 #include "../test_headers.h"
-#include "../../core/math/Vector2.h"
+#include "../../core/math/vector2.h"
 
 TEST(VECTOR2, INIT)
 {
