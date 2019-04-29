@@ -14,16 +14,16 @@ struct Vector2 {
 	Vector2(void);
 	Vector2(float _x, float _y);
 	Vector2(const Vector2 &c);
-	inline float length() const;
-	inline Vector2 normalized() const;
-	inline void normalize();
-	inline bool is_normalized() const;
+	float length() const;
+	Vector2 normalized() const;
+	void normalize();
+	bool is_normalized() const;
 };
 
 /**
  * vector length
  */
-float Vector2::length() const {
+inline float Vector2::length() const {
 	float x2 = x * x;
 	float y2 = y * y;
 	return sqrtf(x2 + y2);
@@ -32,7 +32,7 @@ float Vector2::length() const {
 /**
  * normalize the vector
  */
-Vector2 Vector2::normalized() const {
+inline Vector2 Vector2::normalized() const {
 	Vector2 target;
 	float len = length();
 	if (len == 0.0) {
@@ -48,7 +48,7 @@ Vector2 Vector2::normalized() const {
 /**
  * normalize self
  */
-void Vector2::normalize() {
+inline void Vector2::normalize() {
 	float len = length();
 	if (len != 0.0) {
 		x /= len;
@@ -56,7 +56,10 @@ void Vector2::normalize() {
 	}
 }
 
-bool Vector2::is_normalized() const {
+/*
+ * if is a normalized vector
+ */
+inline bool Vector2::is_normalized() const {
 	return almost_equal(length(), (float)1.0, 2);
 }
 

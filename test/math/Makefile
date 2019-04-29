@@ -26,9 +26,9 @@ Vector2_TEST.o: Vector2_TEST.h Vector2_TEST.cpp
 Vector2.o: ../../core/math/Vector2.h ../../core/math/Vector2.cpp ../../core/math/math_funcs.h
 	@${CPL} -c ../../core/math/Vector2.cpp
 
-
+.PHONY: clean
 clean:
-	@rm test test_vector2 *.o
+	@rm -f test test_vector2 *.o
 	@echo "CLEANED"
 # vim:ft=make
 #
