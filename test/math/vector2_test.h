@@ -80,4 +80,20 @@ TEST(VECTOR2, IS_NORMALIZED)
 	EXPECT_FALSE(d.is_normalized());
 }
 
+TEST(VECTOR2, OPERATOR_PLUS)
+{
+	Vector2 a(1.0, 2.0), b(2.1, 3.4);
+	Vector2 c = a + b;
+	EXPECT_FLOAT_EQ(c.x, 3.1);
+	EXPECT_FLOAT_EQ(c.y, 5.4);
+}
+
+TEST(VECTOR2, OPERATOR_MINUS)
+{
+	Vector2 a(1.0, 2.0), b(2.1, 3.4);
+	Vector2 c = a - b;
+	EXPECT_FLOAT_EQ(c.x, -1.1);
+	EXPECT_FLOAT_EQ(c.y, -1.4);
+}
+
 #endif /* !VECTOR2_TEST_H */

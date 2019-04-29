@@ -26,3 +26,16 @@ Vector2::Vector2(const Vector2 &c) {
 	y = c.y;
 }
 
+Vector2 Vector2::operator+(Vector2 const &obj) {
+	Vector2 res;
+	res.x = x + obj.x;
+	res.y = y + obj.y;
+	return res;
+}
+
+Vector2 Vector2::operator-(Vector2 const &obj) {
+	Vector2 res;
+	res.x = x - obj.x;
+	res.y = y - obj.y;
+	return res;
+}

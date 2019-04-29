@@ -11,9 +11,14 @@ struct Vector2 {
 		};
 		float coord[2];
 	};
+
 	Vector2(void);
 	Vector2(float _x, float _y);
 	Vector2(const Vector2 &c);
+
+	Vector2 operator+(Vector2 const &obj);
+	Vector2 operator-(Vector2 const &obj);
+
 	float length() const;
 	Vector2 normalized() const;
 	void normalize();
