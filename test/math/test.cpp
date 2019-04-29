@@ -5,7 +5,7 @@
  *
  */
  
-#include "math/Vector2_TEST.h"
+#include "Vector2_TEST.h"
 
 int main(int argc, char **argv)
 {
