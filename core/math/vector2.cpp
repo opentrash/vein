@@ -26,6 +26,9 @@ Vector2::Vector2(const Vector2 &c) {
 	y = c.y;
 }
 
+/**
+ * operator +
+ */
 Vector2 Vector2::operator+(Vector2 const &obj) {
 	Vector2 res;
 	res.x = x + obj.x;
@@ -33,6 +36,9 @@ Vector2 Vector2::operator+(Vector2 const &obj) {
 	return res;
 }
 
+/**
+ * operator -
+ */
 Vector2 Vector2::operator-(Vector2 const &obj) {
 	Vector2 res;
 	res.x = x - obj.x;
