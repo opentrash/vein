@@ -7,6 +7,7 @@
 CC := g++
 CPPFLAGS := -lgtest -std=c++17
 CPL := ${CC} ${CPPFLAGS}
+EXE_TESTS := test test_vector2
 
 test: test.o Vector2.o
 	@${CPL} -o $@ $^
@@ -28,7 +29,7 @@ Vector2.o: ../../core/math/Vector2.h ../../core/math/Vector2.cpp ../../core/math
 
 .PHONY: clean
 clean:
-	@rm -f test test_vector2 *.o
+	@rm -f ${EXE_TESTS} *.o
 	@echo "CLEANED"
 # vim:ft=make
 #
