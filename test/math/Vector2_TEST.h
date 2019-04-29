@@ -68,5 +68,16 @@ TEST(VECTOR2, NORMALIZE)
 	EXPECT_FLOAT_EQ(b.y, 0.0);
 }
 
+TEST(VECTOR2, IS_NORMALIZED)
+{
+	Vector2 a;
+	Vector2 b(1.0, 0.0);
+	Vector2 c(0.6, 0.8);
+	Vector2 d(0.6, 0.9);
+	EXPECT_TRUE(b.is_normalized());
+	EXPECT_TRUE(c.is_normalized());
+	EXPECT_FALSE(a.is_normalized());
+	EXPECT_FALSE(d.is_normalized());
+}
 
 #endif /* !VECTOR2_TEST_H */

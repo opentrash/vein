@@ -1,7 +1,7 @@
 #ifndef VECTOR2_H
 #define VECTOR2_H
 
-#include <math.h>
+#include "math_funcs.h"
 
 struct Vector2 {
 	union {
@@ -17,6 +17,7 @@ struct Vector2 {
 	inline float length() const;
 	inline Vector2 normalized() const;
 	inline void normalize();
+	inline bool is_normalized() const;
 };
 
 /**
@@ -53,6 +54,10 @@ void Vector2::normalize() {
 		x /= len;
 		y /= len;
 	}
+}
+
+bool Vector2::is_normalized() const {
+	return almost_equal(length(), (float)1.0, 2);
 }
 
 #endif // define VECTOR2_H

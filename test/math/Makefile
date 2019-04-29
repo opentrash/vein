@@ -23,7 +23,7 @@ test_vector2: Vector2_TEST.o Vector2.o
 Vector2_TEST.o: Vector2_TEST.h Vector2_TEST.cpp
 	@${CPL} -c Vector2_TEST.cpp
 
-Vector2.o: ../../core/math/Vector2.h ../../core/math/Vector2.cpp
+Vector2.o: ../../core/math/Vector2.h ../../core/math/Vector2.cpp ../../core/math/math_funcs.h
 	@${CPL} -c ../../core/math/Vector2.cpp
 
 
