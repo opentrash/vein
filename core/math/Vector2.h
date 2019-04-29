@@ -33,15 +33,8 @@ inline float Vector2::length() const {
  * normalize the vector
  */
 inline Vector2 Vector2::normalized() const {
-	Vector2 target;
-	float len = length();
-	if (len == 0.0) {
-		target.x = 0.0;
-		target.y = 0.0;
-	} else {
-		target.x = x / len;
-		target.y = y / len;
-	}
+	Vector2 target = *this;
+	target.normalize();
 	return target;
 }
 
