@@ -1,14 +1,21 @@
 #ifndef VECTOR2_H
 #define VECTOR2_H
 
-class Vector2 {
-private:
-public:
-	float x;
-	float y;
+#include <math.h>
+
+struct Vector2 {
+	union {
+		struct {
+			float x;
+			float y;
+		};
+		float coord[2];
+	};
 	Vector2(void);
-	Vector2(float x, float y);
+	Vector2(float _x, float _y);
 	Vector2(const Vector2 &c);
+	float length();
+	Vector2 normalize();
 };
 
 #endif // define VECTOR2_H

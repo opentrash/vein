@@ -4,7 +4,7 @@
 # <gliyechen@hotmail.com>
 #
 
-CC := clang++
+CC := g++
 CPPFLAGS := -lgtest -std=c++14
 CPL := ${CC} ${CPPFLAGS}
 
