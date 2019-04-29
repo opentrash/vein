@@ -5,7 +5,7 @@
 #
 
 CC := g++
-CPPFLAGS := -lgtest -std=c++14
+CPPFLAGS := -lgtest -std=c++17
 CPL := ${CC} ${CPPFLAGS}
 
 test: test.o Vector2.o
