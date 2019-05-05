@@ -7,10 +7,11 @@ For example:
 in core/math  
 
 ```sh  
-# in core/math
+# in test/math
 # this will test all submodules in core/math
 make test
 
+# in test/math
 # this will test vector2 in core/math
-make test-vector2
+make test_vector2
 ```
