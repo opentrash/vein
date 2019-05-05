@@ -2,6 +2,8 @@
 game engine written in cpp
 
 ### test
+Please install [google-test](https://github.com/google/googletest) first.  
+You can install it by your own or install it with a simple [script](https://github.com/liyechen/gtest-installer)(only for mac).  
 You can test the corresponding module in each subfolder.  
 For example:  
 in core/math  
