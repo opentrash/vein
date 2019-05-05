@@ -1,11 +1,10 @@
 /*
  * Created by liyechen
- * Time 2019/04/28 15:06
+ * Time 2019/05/05 15:43
  * Email <gliyechen@hotmail.com>
- *
  */
  
-#include "vector2_test.h"
+ 
 #include "vector3_test.h"
 
 int main(int argc, char **argv)

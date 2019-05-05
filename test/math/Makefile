@@ -7,13 +7,13 @@
 CC := g++
 CPPFLAGS := -lgtest -std=c++17
 CPL := ${CC} ${CPPFLAGS}
-EXE_TESTS := test test_vector2
+EXE_TESTS := test test_vector2 test_vector3
 
-test: test.o vector2.o
+test: test.o vector2.o vector3.o
 	@${CPL} -o $@ $^
 	@./$@
 
-test.o: vector2_test.h
+test.o: vector2_test.h vector3_test.h
 	@${CPL} -c test.cpp
 
 
@@ -26,6 +26,17 @@ vector2_test.o: vector2_test.h vector2_test.cpp
 
 vector2.o: ../../core/math/vector2.h ../../core/math/vector2.cpp ../../core/math/math_funcs.h
 	@${CPL} -c ../../core/math/vector2.cpp
+
+test_vector3: vector3_test.o vector3.o
+	@${CPL} -o $@ $^
+	@./$@
+
+vector3_test.o: vector3_test.h vector3_test.cpp
+	@${CPL} -c vector3_test.cpp
+
+vector3.o: ../../core/math/vector3.h ../../core/math/vector3.cpp ../../core/math/math_funcs.h
+	@${CPL} -c ../../core/math/vector3.cpp
+
 
 .PHONY: clean
 clean:
