@@ -14,7 +14,7 @@ struct Vector2 {
 
 	Vector2(void);
 	Vector2(float _x, float _y);
-	Vector2(const Vector2 &c);
+	Vector2(Vector2 const &c);
 
 	Vector2 operator+(Vector2 const &obj);
 	Vector2 operator-(Vector2 const &obj);
