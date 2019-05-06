@@ -55,5 +55,43 @@ TEST(VECTOR3, OPERATOR_MINUS)
 	EXPECT_FLOAT_EQ(c.z, -3.0);
 }
 
+TEST(VECTOR3, LENGTH)
+{
+	Vector3 a(1.0, 2.0, 3.0);
+	float len = a.length();
+	EXPECT_FLOAT_EQ(len, 3.7416573868);
+}
+
+TEST(VECTOR3, IS_NORMALIZED)
+{
+	Vector3 a(1.0, 2.0, 3.0);
+	EXPECT_FALSE(a.is_normalized());
+
+	Vector3 b(0.6, 0.8, 0.0);
+	EXPECT_TRUE(b.is_normalized());
+}
+
+TEST(VECTOR3, NORMALIZE)
+{
+	Vector3 a(1.0, 2.0, 3.0);
+	a.normalize();
+	EXPECT_TRUE(a.is_normalized());
+
+	EXPECT_FLOAT_EQ(a.x, 0.26726124);
+	EXPECT_FLOAT_EQ(a.y, 0.53452248);
+	EXPECT_FLOAT_EQ(a.z, 0.80178372);
+}
+
+TEST(VECTOR3, NORMALIZED)
+{
+	Vector3 a(1.0, 2.0, 3.0);
+	Vector3 b = a.normalized();
+	EXPECT_TRUE(b.is_normalized());
+
+	EXPECT_FLOAT_EQ(b.x, 0.26726124);
+	EXPECT_FLOAT_EQ(b.y, 0.53452248);
+	EXPECT_FLOAT_EQ(b.z, 0.80178372);
+}
+
 
 #endif /* !VECTOR3_TEST_H */
