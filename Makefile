@@ -4,8 +4,8 @@
 # <gliyechen@hotmail.com>
 #
 
-all:
-    echo 'hi'
-
+init:
+	@git config core.hooksPath .githooks
+	@echo "init successfully"
 # vim:ft=make
 #
