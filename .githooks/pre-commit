@@ -20,6 +20,7 @@ fi
 # Redirect output to stderr.
 exec 1>&2
 
+echo "CPPLINT....."
 cpplint=cpplint
 sum=0
 folders='core/ test/'
