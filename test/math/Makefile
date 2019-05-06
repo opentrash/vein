@@ -23,7 +23,7 @@ test_vector2: vector2_test.o vector2.o
 	@./$@
 
 vector2_test.o: vector2_test.h vector2_test.cpp
-	@${CPL} -c vector2_test.cpp
+	@${CC} ${CPPFLAGS} -c vector2_test.cpp
 
 vector2.o: ../../core/math/vector2.h ../../core/math/vector2.cpp ../../core/math/math_funcs.h
 	@${CC} ${CPPFLAGS} -c ../../core/math/vector2.cpp
@@ -33,7 +33,7 @@ test_vector3: vector3_test.o vector3.o
 	@./$@
 
 vector3_test.o: vector3_test.h vector3_test.cpp
-	@${CPL} -c vector3_test.cpp
+	@${CC} ${CPPFLAGS} -c vector3_test.cpp
 
 vector3.o: ../../core/math/vector3.h ../../core/math/vector3.cpp ../../core/math/math_funcs.h
 	@${CC} ${CPPFLAGS} -c ../../core/math/vector3.cpp
