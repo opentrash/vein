@@ -20,6 +20,9 @@ struct Vector3 {
 	Vector3(void);
 	Vector3(float _x, float _y, float _z);
 	Vector3(Vector3 const &c);
+
+	Vector3 operator+(Vector3 const &obj);
+	Vector3 operator-(Vector3 const &obj);
 };
 
 #endif /* !VECTOR3_H */

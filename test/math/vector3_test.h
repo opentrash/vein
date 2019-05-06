@@ -37,4 +37,23 @@ TEST(VECTOR3, COPY)
 	EXPECT_TRUE(isTrue);
 }
 
+TEST(VECTOR3, OPERATOR_PLUS)
+{
+	Vector3 a(1.0, 2.0, 3.0), b(2.1, 3.4, -1.0);
+	Vector3 c = a + b;
+	EXPECT_FLOAT_EQ(c.x, 3.1);
+	EXPECT_FLOAT_EQ(c.y, 5.4);
+	EXPECT_FLOAT_EQ(c.z, 2.0);
+}
+
+TEST(VECTOR3, OPERATOR_MINUS)
+{
+	Vector3 a(1.0, 2.0, -1.0), b(2.1, 3.4, 2.0);
+	Vector3 c = a - b;
+	EXPECT_FLOAT_EQ(c.x, -1.1);
+	EXPECT_FLOAT_EQ(c.y, -1.4);
+	EXPECT_FLOAT_EQ(c.z, -3.0);
+}
+
+
 #endif /* !VECTOR3_TEST_H */

@@ -24,7 +24,7 @@ Vector3::Vector3(const Vector3 &c) {
 	z = c.z;
 }
 
-Vector3 Vector3::operator+(Vector2 const &obj) {
+Vector3 Vector3::operator+(Vector3 const &obj) {
 	Vector3 sum;
 	sum.x = x + obj.x;
 	sum.y = y + obj.y;
