@@ -58,7 +58,7 @@ inline void Vector2::normalize() {
  * if is a normalized vector
  */
 inline bool Vector2::is_normalized() const {
-    return almost_equal(length(), (float)1.0, 2);
+    return almost_equal(length(), static_cast<float>(1.0), 2);
 }
 
-#endif // define VECTOR2_H
+#endif  // define VECTOR2_H

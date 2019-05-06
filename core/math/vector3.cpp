@@ -3,7 +3,7 @@
  * Time 2019/05/05 15:35
  * Email <gliyechen@hotmail.com>
  */
- 
+
 #include "vector3.h"
 
 Vector3::Vector3(void) {

@@ -41,7 +41,7 @@ inline float Vector3::length() const {
 
 inline bool Vector3::is_normalized() const {
     float len = length();
-    return almost_equal(len, (float)1.0, 2);
+    return almost_equal(len, static_cast<float>(1.0), 2);
 }
 
 inline void Vector3::normalize() {
