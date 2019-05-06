@@ -1,6 +1,14 @@
 # vein
 game engine written in cpp
 
+### init
+Please init the githooks first by the command:
+
+``` 
+# root folder
+make init
+```
+
 ### test
 Please install [google-test](https://github.com/google/googletest) first.  
 You can install it by your own or install it with a simple [script](https://github.com/liyechen/gtest-installer)(only for mac).  
