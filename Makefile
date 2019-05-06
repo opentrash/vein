@@ -5,7 +5,7 @@
 #
 
 all:
-	echo 'hi'
+    echo 'hi'
 
 # vim:ft=make
 #
