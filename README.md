@@ -1,11 +1,17 @@
 # vein
 game engine written in cpp
 
-### init
-Please init the githooks first by the command:
+### before
+1. prepare cpplint  
+
+```
+pip install cpplint
+```
+
+2. init the githooks first by the command:
 
 ``` 
-# root folder
+# project root folder
 make init
 ```
 
