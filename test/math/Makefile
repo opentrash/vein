@@ -4,14 +4,25 @@
 # <gliyechen@hotmail.com>
 #
 
+UNAME_S := $(shell uname -s)
+
 CC := g++
 CPPFLAGS := -std=c++17
-LINKFLAGS := -lgtest 
+LINKFLAGS :=
+
+ifeq ($(UNAME_S), Linux)
+	LINKFLAGS += /usr/local/lib/libgtest.a -lpthread
+endif
+ifeq ($(UNAME_S), Darwin)
+	LINKFLAGS += -lgtest
+endif
+
 CPL := ${CC} ${LINKFLAGS} ${CPPFLAGS}
+
 EXE_TESTS := test test_vector2 test_vector3
 
 test: test.o vector2.o vector3.o
-	@${CPL} -o $@ $^
+	@${CC} $^ ${LINKFLAGS} ${CPPFLAGS} -o $@
 	@./$@
 
 test.o: vector2_test.h vector3_test.h
@@ -19,7 +30,7 @@ test.o: vector2_test.h vector3_test.h
 
 
 test_vector2: vector2_test.o vector2.o
-	@${CPL} -o $@ $^
+	@${CC} $^ ${LINKFLAGS} ${CPPFLAGS} -o $@
 	@./$@
 
 vector2_test.o: vector2_test.h vector2_test.cpp
@@ -29,7 +40,7 @@ vector2.o: ../../core/math/vector2.h ../../core/math/vector2.cpp ../../core/math
 	@${CC} ${CPPFLAGS} -c ../../core/math/vector2.cpp
 
 test_vector3: vector3_test.o vector3.o
-	@${CPL} -o $@ $^
+	@${CC} $^ ${LINKFLAGS} ${CPPFLAGS} -o $@
 	@./$@
 
 vector3_test.o: vector3_test.h vector3_test.cpp

@@ -16,10 +16,24 @@ pip install cpplint
 make init
 ```
 
-### test
+## test
 Please install [google-test](https://github.com/google/googletest) first.  
+
+#### Macos
 You can install it by your own or install it with a simple [script](https://github.com/liyechen/gtest-installer)(only for mac).  
-You can test the corresponding module in each subfolder.  
+
+#### Linux
+
+```
+# make sure cmake have been installed, different systems have different ways to install
+sudo apt install libgtest-dev
+cd /usr/src/gtest
+sudo cmake CMakeLists.txt
+sudo make
+sudo make install
+```
+
+You can now test the corresponding module in each subfolder.  
 For example:  
 in core/math  
 
