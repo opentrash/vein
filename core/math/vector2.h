@@ -20,6 +20,8 @@ struct Vector2 {
     Vector2 operator-(Vector2 const &obj);
 
     float length() const;
+    float length_squared() const;
+
     Vector2 normalized() const;
     void normalize();
     bool is_normalized() const;
@@ -32,6 +34,13 @@ inline float Vector2::length() const {
     float x2 = x * x;
     float y2 = y * y;
     return sqrtf(x2 + y2);
+}
+
+/**
+ * vector length squared
+ */
+inline float Vector2::length_squared() const {
+    return x * x + y * y;
 }
 
 /**

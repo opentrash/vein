@@ -56,6 +56,11 @@ TEST(VECTOR3, LENGTH) {
     EXPECT_FLOAT_EQ(len, 3.7416573868);
 }
 
+TEST(VECTOR3, LENGTH_SQUARED) {
+    Vector3 a(1.0, 2.0, 3.0);
+    EXPECT_FLOAT_EQ(14.0, a.length_squared());
+}
+
 TEST(VECTOR3, IS_NORMALIZED) {
     Vector3 a(1.0, 2.0, 3.0);
     EXPECT_FALSE(a.is_normalized());
