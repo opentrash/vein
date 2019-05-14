@@ -40,6 +40,11 @@ TEST(VECTOR2, LENGTH) {
     EXPECT_FLOAT_EQ(lengthB, 0.0);
 }
 
+TEST(VECTOR2, LENGTH_SQUARED) {
+    Vector2 a(3.0, 4.0);
+    EXPECT_FLOAT_EQ(25.0, a.length_squared());
+}
+
 TEST(VECTOR2, NORMALIZED) {
     Vector2 a(3.0, 4.0);
     Vector2 target = a.normalized();
