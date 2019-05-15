@@ -25,6 +25,8 @@ struct Vector2 {
     Vector2 normalized() const;
     void normalize();
     bool is_normalized() const;
+
+    float dot(const Vector2 &target) const;
 };
 
 /**
@@ -41,6 +43,13 @@ inline float Vector2::length() const {
  */
 inline float Vector2::length_squared() const {
     return x * x + y * y;
+}
+
+/**
+ * dot
+ */
+inline float Vector2::dot(const Vector2 &target) const {
+    return x * target.x + y * target.y;
 }
 
 /**
