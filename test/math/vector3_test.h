@@ -89,5 +89,12 @@ TEST(VECTOR3, NORMALIZED) {
     EXPECT_FLOAT_EQ(b.z, 0.80178372);
 }
 
+TEST(VECTOR3, DOT) {
+    Vector3 a(1.0, 2.0, 3.0);
+    Vector3 b(2.0, -1.0, 0.0);
+    EXPECT_FLOAT_EQ(0.0, a.dot(b));
+    EXPECT_FLOAT_EQ(0.0, b.dot(a));
+}
+
 
 #endif /* !VECTOR3_TEST_H */

@@ -31,6 +31,8 @@ struct Vector3 {
     bool is_normalized() const;
     void normalize();
     Vector3 normalized() const;
+
+    float dot(const Vector3 &target) const;
 };
 
 inline float Vector3::length() const {
@@ -62,6 +64,10 @@ inline Vector3 Vector3::normalized() const {
     Vector3 target = *this;
     target.normalize();
     return target;
+}
+
+inline float Vector3::dot(const Vector3 &target) const {
+    return x * target.x + y * target.y + z * target.z;
 }
 
 #endif /* !VECTOR3_H */

@@ -49,6 +49,7 @@ TEST(VECTOR2, DOT) {
     Vector2 a(3.0, 4.0);
     Vector2 b(1.0, 0.0);
     EXPECT_FLOAT_EQ(3, a.dot(b));
+    EXPECT_FLOAT_EQ(3, b.dot(a));
 }
 
 TEST(VECTOR2, NORMALIZED) {
