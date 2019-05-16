@@ -19,15 +19,23 @@ endif
 
 CPL := ${CC} ${LINKFLAGS} ${CPPFLAGS}
 
-EXE_TESTS := test test_vector2 test_vector3
+EXE_TESTS := test test_vector2 test_vector3 math_funcs_test
+TEST_OBJECTS := vector2.o vector3.o
+TEST_HEADERS := vector2_test.h vector3_test.h math_funcs_test.h
 
-test: test.o vector2.o vector3.o
+test: test.o ${TEST_OBJECTS}
 	@${CC} $^ ${LINKFLAGS} ${CPPFLAGS} -o $@
 	@./$@
 
-test.o: vector2_test.h vector3_test.h
+test.o: ${TEST_HEADERS}
 	@${CC} ${CPPFLAGS} -c test.cpp
 
+math_funcs_test: math_funcs_test.o
+	@${CC} $^ ${LINKFLAGS} ${CPPFLAGS} -o $@
+	@./$@
+
+math_funcs_test.o: ../../core/math/math_funcs.h math_funcs_test.h 
+	@${CC} ${CPPFLAGS} -c math_funcs_test.cpp
 
 test_vector2: vector2_test.o vector2.o
 	@${CC} $^ ${LINKFLAGS} ${CPPFLAGS} -o $@
