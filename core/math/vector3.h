@@ -23,8 +23,8 @@ struct Vector3 {
     Vector3(float _x, float _y, float _z);
     Vector3(Vector3 const &c);
 
-    Vector3 operator+(Vector3 const &obj);
-    Vector3 operator-(Vector3 const &obj);
+    Vector3 operator+(const Vector3 &obj) const;
+    Vector3 operator-(const Vector3 &obj) const;
 
     float length() const;
     float length_squared() const;
@@ -46,6 +46,21 @@ inline float Vector3::length_squared() const {
     return x * x + y * y + z * z;
 }
 
+inline Vector3 Vector3::operator+(const Vector3 &obj) const {
+    Vector3 sum;
+    sum.x = x + obj.x;
+    sum.y = y + obj.y;
+    sum.z = z + obj.z;
+    return sum;
+}
+
+inline Vector3 Vector3::operator-(const Vector3 &obj) const {
+    Vector3 diff;
+    diff.x = x - obj.x;
+    diff.y = y - obj.y;
+    diff.z = z - obj.z;
+    return diff;
+}
 inline bool Vector3::is_normalized() const {
     float len = length();
     return almost_equal(len, static_cast<float>(1.0), 2);

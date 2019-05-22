@@ -24,18 +24,3 @@ Vector3::Vector3(const Vector3 &c) {
     z = c.z;
 }
 
-Vector3 Vector3::operator+(Vector3 const &obj) {
-    Vector3 sum;
-    sum.x = x + obj.x;
-    sum.y = y + obj.y;
-    sum.z = z + obj.z;
-    return sum;
-}
-
-Vector3 Vector3::operator-(Vector3 const &obj) {
-    Vector3 diff;
-    diff.x = x - obj.x;
-    diff.y = y - obj.y;
-    diff.z = z - obj.z;
-    return diff;
-}
