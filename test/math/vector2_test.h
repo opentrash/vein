@@ -92,11 +92,25 @@ TEST(VECTOR2, OPERATOR_PLUS) {
     EXPECT_FLOAT_EQ(c.y, 5.4);
 }
 
+TEST(VECTOR2, OPERATOR_PLUS_EQUAL) {
+    Vector2 a(1.0, 2.0), b(2.1, 3.4);
+    a += b;
+    EXPECT_FLOAT_EQ(a.x, 3.1);
+    EXPECT_FLOAT_EQ(a.y, 5.4);
+}
+
 TEST(VECTOR2, OPERATOR_MINUS) {
     Vector2 a(1.0, 2.0), b(2.1, 3.4);
     Vector2 c = a - b;
     EXPECT_FLOAT_EQ(c.x, -1.1);
     EXPECT_FLOAT_EQ(c.y, -1.4);
+}
+
+TEST(VECTOR2, OPERATOR_MINUS_EQUAL) {
+    Vector2 a(1.0, 2.0), b(2.1, 3.4);
+    a -= b;
+    EXPECT_FLOAT_EQ(a.x, -1.1);
+    EXPECT_FLOAT_EQ(a.y, -1.4);
 }
 
 #endif /* !VECTOR2_TEST_H */

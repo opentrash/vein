@@ -17,7 +17,10 @@ struct Vector2 {
     Vector2(Vector2 const &c);
 
     Vector2 operator+(const Vector2 &obj) const;
+    void operator+=(const Vector2 &obj);
+
     Vector2 operator-(const Vector2 &obj) const;
+    void operator-=(const Vector2 &obj);
 
     float length() const;
     float length_squared() const;
@@ -39,6 +42,11 @@ inline Vector2 Vector2::operator+(const Vector2 &obj) const {
     return res;
 }
 
+inline void Vector2::operator+=(const Vector2 &obj) {
+    x = x + obj.x;
+    y = y + obj.y;
+}
+
 /**
  * operator -
  */
@@ -48,6 +56,12 @@ inline Vector2 Vector2::operator-(const Vector2 &obj) const {
     res.y = y - obj.y;
     return res;
 }
+
+inline void Vector2::operator-=(const Vector2 &obj) {
+    x = x - obj.x;
+    y = y - obj.y;
+}
+
 /**
  * vector length
  */

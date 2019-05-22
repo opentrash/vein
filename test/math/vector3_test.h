@@ -42,12 +42,28 @@ TEST(VECTOR3, OPERATOR_PLUS) {
     EXPECT_FLOAT_EQ(c.z, 2.0);
 }
 
+TEST(VECTOR3, OPERATOR_PLUS_EQUAL) {
+    Vector3 a(1.0, 2.0, 3.0), b(2.1, 3.4, -1.0);
+    a += b;
+    EXPECT_FLOAT_EQ(a.x, 3.1);
+    EXPECT_FLOAT_EQ(a.y, 5.4);
+    EXPECT_FLOAT_EQ(a.z, 2.0);
+}
+
 TEST(VECTOR3, OPERATOR_MINUS) {
     Vector3 a(1.0, 2.0, -1.0), b(2.1, 3.4, 2.0);
     Vector3 c = a - b;
     EXPECT_FLOAT_EQ(c.x, -1.1);
     EXPECT_FLOAT_EQ(c.y, -1.4);
     EXPECT_FLOAT_EQ(c.z, -3.0);
+}
+
+TEST(VECTOR3, OPERATOR_MINUS_EQUAL) {
+    Vector3 a(1.0, 2.0, -1.0), b(2.1, 3.4, 2.0);
+    a -= b;
+    EXPECT_FLOAT_EQ(a.x, -1.1);
+    EXPECT_FLOAT_EQ(a.y, -1.4);
+    EXPECT_FLOAT_EQ(a.z, -3.0);
 }
 
 TEST(VECTOR3, LENGTH) {
