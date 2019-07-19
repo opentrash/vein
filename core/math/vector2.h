@@ -12,23 +12,28 @@ struct Vector2 {
         float coord[2];
     };
 
+    // ctor
     Vector2(void);
     Vector2(float _x, float _y);
     Vector2(Vector2 const &c);
 
+    // operator overloading
     Vector2 operator+(const Vector2 &obj) const;
     void operator+=(const Vector2 &obj);
 
     Vector2 operator-(const Vector2 &obj) const;
     void operator-=(const Vector2 &obj);
 
+    // basic attributes
     float length() const;
     float length_squared() const;
 
+    // normalize
     Vector2 normalized() const;
     void normalize();
     bool is_normalized() const;
 
+    // dot
     float dot(const Vector2 &target) const;
 };
 
