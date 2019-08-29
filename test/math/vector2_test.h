@@ -113,4 +113,14 @@ TEST(VECTOR2, OPERATOR_MINUS_EQUAL) {
     EXPECT_FLOAT_EQ(a.y, -1.4);
 }
 
+TEST(VECTOR2, OPERATOR_MULTI) {
+    Vector2 a(1.0, 2.0);
+    Vector2 b = a * 3.0;
+    EXPECT_FLOAT_EQ(b.x, 3.0);
+    EXPECT_FLOAT_EQ(b.y, 6.0);
+    a *= 3.0;
+    EXPECT_FLOAT_EQ(a.x, 3.0);
+    EXPECT_FLOAT_EQ(a.y, 6.0);
+}
+
 #endif /* !VECTOR2_TEST_H */

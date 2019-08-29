@@ -112,5 +112,16 @@ TEST(VECTOR3, DOT) {
     EXPECT_FLOAT_EQ(0.0, b.dot(a));
 }
 
+TEST(VECTOR3, OPERATOR_MULTI) {
+    Vector3 a(1.0, 2.0, 3.0);
+    Vector3 b = a * 3.0;
+    EXPECT_FLOAT_EQ(b.x, 3.0);
+    EXPECT_FLOAT_EQ(b.y, 6.0);
+    EXPECT_FLOAT_EQ(b.z, 9.0);
+    a *= 3.0;
+    EXPECT_FLOAT_EQ(a.x, 3.0);
+    EXPECT_FLOAT_EQ(a.y, 6.0);
+    EXPECT_FLOAT_EQ(a.z, 9.0);
+}
 
 #endif /* !VECTOR3_TEST_H */
