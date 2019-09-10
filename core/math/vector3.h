@@ -29,6 +29,9 @@ struct Vector3 {
     Vector3 operator-(const Vector3 &obj) const;
     void operator-=(const Vector3 &obj);
 
+    Vector3 operator*(float k) const;
+    void operator*=(float k);
+
     float length() const;
     float length_squared() const;
     bool is_normalized() const;
@@ -75,6 +78,23 @@ inline void Vector3::operator-=(const Vector3 &obj) {
     x = x - obj.x;
     y = y - obj.y;
     z = z - obj.z;
+}
+
+/**
+ * operator * to float
+ */
+inline Vector3 Vector3::operator*(float k) const {
+    Vector3 res;
+    res.x = x * k;
+    res.y = y * k;
+    res.z = z * k;
+    return res;
+}
+
+inline void Vector3::operator*=(float k) {
+    x = x * k;
+    y = y * k;
+    z = z * k;
 }
 
 inline bool Vector3::is_normalized() const {
